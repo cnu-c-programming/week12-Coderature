@@ -5,7 +5,11 @@ int main(int argc, const char* argv[]) {
         return 0;
     
     FILE* fp = fopen(argv[1], "r");
+    if (fp == NULL) {
+        perror("error: cannot open");
+        return 1;
+    }
 
-
+    fclose(fp);
     return 0;
 }
